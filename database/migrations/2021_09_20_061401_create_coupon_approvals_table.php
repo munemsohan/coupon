@@ -18,6 +18,7 @@ class CreateCouponApprovalsTable extends Migration
             $table->integer('user_id');
             $table->integer('coupon_id');
             $table->string('coupon_code');
+            $table->string('verify_code')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

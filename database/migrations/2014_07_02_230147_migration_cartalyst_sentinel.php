@@ -102,13 +102,13 @@ class MigrationCartalystSentinel extends Migration
             $table->string('email')->nullable();
             $table->string('image')->nullable();
             $table->string('referral')->nullable();
+            $table->integer('is_paid')->default(0);
             $table->string('password')->nullable();
             $table->text('permissions')->nullable();
             $table->datetime('last_login')->nullable();
             $table->timestamps();
 
             $table->engine = 'InnoDB';
-            $table->unique('mobile');
         });
     }
 

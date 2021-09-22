@@ -12,6 +12,12 @@
 					<form action="{{route('coupon_verify')}}" method="POST" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group">
+							<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Mobile</i></span>
+								<input class="form-control" type="text" name="mobile" placeholder="Mobile No." required>
+							</div>
+						</div>
 							<div class="input-group">
 								<span class="input-group-addon">Serial No.</i></span>
 								<input class="form-control" type="text" name="coupon_serial" placeholder="Coupon Serial" required>
@@ -23,13 +29,9 @@
 								<input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code" required>
 							</div>
 						</div>
-
-						
-						<input class="form-control" type="hidden" name="userId" value="{{$userId}}">
-
 						<div class="form-group">
 
-								<input class="btn btn-success pull-right" type="submit" name="submit" value="Register">
+								<input class="btn btn-success pull-right" type="submit" name="submit" value="Submit">
 						</div>
 
 					</div>

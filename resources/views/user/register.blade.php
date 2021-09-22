@@ -33,7 +33,7 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-image"></i></span>
-								<input class="form-control" type="file" name="image_path" placeholder="Image" required>
+								<input class="form-control" type="file" name="image_path" placeholder="Image" accept="image/*" required>
 							</div>
 						</div>
 						<div class="form-group">
