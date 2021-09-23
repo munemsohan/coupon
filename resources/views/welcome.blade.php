@@ -3,9 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoptrick</title>
-    <link rel="stylesheet" href="{{asset('asset/css/nicepageda9a.css')}}" media="screen">
-    <script class="u-script" type="text/javascript" src="{{asset('asset/js/jquery-1.9.1.min.js')}}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{{asset('asset/js/nicepage.js')}}" defer=""></script>
+    <link rel="stylesheet" href="{{url('public/asset/css/nicepageda9a.css')}}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{url('public/asset/js/jquery-1.9.1.min.js')}}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{url('public/asset/js/nicepage.js')}}" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
@@ -54,7 +54,7 @@
   }
   .u-section-2 .u-image-1 {
       min-height: 669px;
-      background-image: url('image/4503151.png');
+      background-image: url('public/image/4503151.png');
       background-position: 50% 50%;
   }
   .u-section-2 .u-container-layout-2 {
@@ -156,7 +156,7 @@
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-27 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
                   <h2 class="u-custom-font u-font-open-sans u-text u-text-1">
-                    <span style="font-weight: 700;">SHOPTRIC
+                    <span style="font-weight: 700;">SHOPTRICKS
                     </h2>
                     <div class="u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
                     <p class="u-text u-text-2"><a href="{{route('register')}}" id="myDIV" >Click Here To Register</a>
@@ -178,7 +178,7 @@
 
 <section class="u-backlink u-clearfix u-grey-80">
 
-    <span>Shoptric</span>
+    <span>Shoptricks</span>
 
     <p class="u-text">
         <span>created with</span>

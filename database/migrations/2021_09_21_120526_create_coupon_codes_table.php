@@ -17,7 +17,7 @@ class CreateCouponCodesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('res_name');
-            $table->integer('res_mobile')->nullable();
+            $table->string('res_mobile')->nullable();
             $table->string('desc')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

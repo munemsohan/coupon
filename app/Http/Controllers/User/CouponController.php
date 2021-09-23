@@ -54,15 +54,9 @@ class CouponController extends Controller
                     $allCouponCodes = $coupon->coupon_code;
                     $couponArray = explode(',', $allCouponCodes);
 
-                    $key = array_search($coupon_code->id, $couponArray);
+                    if(in_array($coupon_code->id, $couponArray)){
 
-                    if($key){
-
-                        // unset($couponArray[$key]);
-
-                        // $allCouponCodes = implode(',',$couponArray);
-                        // $coupon->coupon_code = $allCouponCodes;
-                        // $coupon->save();
+                        $key = array_search($coupon_code->id, $couponArray);
 
                         $couponId = $coupon->id;
                         $couponCodeID = $coupon_code->id;
@@ -124,10 +118,15 @@ class CouponController extends Controller
 
             $coupon_code = Coupon_code::where('id',$request->coupon_code)->first();
 
-            $message = "Hello: ".$coupon_code->res_name." ! ".$coupon_code->desc;
+            $user = User::where('id', $request->user_id)->first();
 
-            $ch = curl_init("https://sms.one9.one/sms/api?action=send-sms&api_key=c3dpbmdiZDpGdW5ueS45MDkw&to=".$coupon_code->res_mobile."&from=swingbd&sms=".$message);
+            $coupon_code->desc = str_replace("[name]",$user->name,$coupon_code->desc);
 
+            $message = "Hello, ".$coupon_code->res_name." ! ".$coupon_code->desc;
+
+            $url = "https://sms.one9.one/sms/api?action=send-sms&api_key=c3dpbmdiZDpGdW5ueS45MDkw&to=".$coupon_code->res_mobile."&from=swingbd&sms=".$message;
+
+            $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_NOBODY,1);
             curl_exec($ch);
             curl_close($ch);

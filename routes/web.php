@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\WithdrawController;
 use App\Http\Controllers\User\CouponController;
 use App\Http\Controllers\Seller\SellerController;
 
@@ -34,7 +35,6 @@ Route::post('/verify_code', [CouponController::class, 'verify_code'])->name('ver
 Route::get('/verified', [CouponController::class, 'coupon_verified'])->name('coupon_verified');
 
 //seller
-
 Route::group(['prefix'=>'seller'], function(){
 
 Route::get('/internal_register', [SellerController::class,'register']);
@@ -50,5 +50,6 @@ Route::group(['prefix'=>'admin'], function(){
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'checkLogin'])->name('login');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/withdraw/{id}', [WithdrawController::class, 'withdraw'])->name('withdraw');
 
 });
