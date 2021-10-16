@@ -6,18 +6,23 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">User Registration</h3>
+					<h3 class="panel-title">Seller Registration</h3>
 				</div>
 				<div class="panel-body">
 					<form action="{{route('seller_register')}}" method="POST" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group">
 							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-image"></i></span>
+								<input class="form-control" type="file" name="image_path" placeholder="Image" accept="image/*" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
 								<span class="input-group-addon">Seller Name</span>
 								<input class="form-control" type="text" name="name" placeholder="Name" required>
 							</div>
 						</div>
-
 
 						<div class="form-group">
 							<div class="input-group">
@@ -27,7 +32,7 @@
 						</div>
 
 						<div class="form-group">
-								<input class="btn btn-success pull-right" type="submit" name="submit" value="Register">
+							<input class="btn btn-success pull-right" type="submit" name="submit" value="Register">
 						</div>
 
 					</div>

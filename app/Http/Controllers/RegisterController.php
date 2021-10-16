@@ -27,7 +27,7 @@ class RegisterController extends Controller
             $destinationPath = public_path('image/users'); 
             $profileImage = time() . "-". $request->mobile. "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-
+            
             $user = array(
                 'name' => $request->name,
                 'mobile' => $request->mobile,

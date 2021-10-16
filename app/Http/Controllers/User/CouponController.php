@@ -8,13 +8,21 @@ use App\Models\Coupon;
 use App\Models\Coupon_code;
 use App\Models\Coupon_approval;
 use Illuminate\Http\Request;
+use Sentinel;
+use Illuminate\Support\Facades\Session;
 
 class CouponController extends Controller
 {
 
     public function verify()
     {
+        if(Sentinel::check()){
         return view('user.coupon_verify');
+    }
+    else{
+
+        return redirect()->to('login');
+    }
     }
 
     public function checkVerify(Request $request)
@@ -22,15 +30,12 @@ class CouponController extends Controller
 
         $couponSerial = $request->coupon_serial;
         $couponCode = $request->coupon_code;
-        $mobile = $request->mobile;
 
-        $user = User::where('mobile',$mobile) -> first();
-        $userId = $user->id;
+        $userId = Session::get('user_id');
+        $user = User::where('id', $userId) -> first();
+        
 
-        if(!$user){
-            echo '<h1>User Not Found</h1>';
-        }
-        elseif ($user->is_paid == 0) {
+        if ($user->is_paid == 0) {
             echo '<h1>You are not a Paid User</h1>';
         }
         else{
@@ -54,7 +59,7 @@ class CouponController extends Controller
                     $allCouponCodes = $coupon->coupon_code;
                     $couponArray = explode(',', $allCouponCodes);
 
-                    if(in_array($coupon_code->id, $couponArray)){
+                    if(in_array($coupon_code->name, $couponArray)){
 
                         $key = array_search($coupon_code->id, $couponArray);
 

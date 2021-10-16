@@ -11,7 +11,6 @@ class DashboardController extends Controller
     
     public function index(){
 
-
         $sellers = Seller::paginate(10);
         return view('admin.dashboard', compact('sellers'));
     }

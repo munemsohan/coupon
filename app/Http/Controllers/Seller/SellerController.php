@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class SellerController extends Controller
 {
-    
+
     public function register(){
 
         return view('seller.register');
@@ -18,12 +18,18 @@ class SellerController extends Controller
 
         $seller = new Seller();
 
+        $image = $request->file('image_path');
+        $destinationPath = public_path('image/sellers'); 
+        $profileImage = time() . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+
         $seller->name = $request->name;
         $seller->referral_code = $request->referral_code;
+        $seller->image = "image/sellers/".$profileImage;
 
         $seller->save();
 
-        echo 'Seller Registered Successfully';
+        echo '<h1><center>Seller Registered Successfully</center><h1>';
         exit();
 
     }

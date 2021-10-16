@@ -159,11 +159,10 @@
                     <span style="font-weight: 700;">SHOPTRICKS
                     </h2>
                     <div class="u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
-                    <p class="u-text u-text-2"><a href="{{route('register')}}" id="myDIV" >Click Here To Register</a>
+                    <p class="u-text u-text-2"><a href="{{url('login')}}" id="myDIV" >Click Here To Login</a>
                     </p>
 
-                    <p class="u-text u-text-2"><a href="{{route('verify')}}" id="myDIV2" >Verify Coupon</a>
-                    </p>
+                    <a href="{{url('register')}}" style="font-weight: bold; margin: 20px; font-size: 20px;"><u>Need An Account ? Register Here.</u></a>
                 </div>
             </div>
             <div class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-shape-rectangle u-size-33 u-image-1" data-image-width="1014" data-image-height="864">
